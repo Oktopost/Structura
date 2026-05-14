@@ -71,7 +71,7 @@ class URLTest extends TestCase
 	public function test_setUrl_ValidURLReturnsTrue()
 	{
 		$subject = new URL();
-		self::assertTrue($subject->setUrl('http://unstable-cacao.com'));
+		self::assertTrue($subject->setUrl('http://oktopost.com'));
 	}
 	
 	public function test_setUrl_InvalidURLPassed_NoParamsSet()
@@ -503,15 +503,15 @@ class URLTest extends TestCase
 	
 	public function test_get_NewURLInstanceReturned()
 	{
-		self::assertInstanceOf(URL::class, URL::get('http://www.unstable-cacao.com'));
+		self::assertInstanceOf(URL::class, URL::get('http://www.oktopost.com'));
 	}
 	
 	public function test_get_ParamsSet()
 	{
-		$url = URL::get('http://www.unstable-cacao.com');
+		$url = URL::get('http://www.oktopost.com');
 		
 		self::assertEquals('http', $url->Scheme);
-		self::assertEquals('www.unstable-cacao.com', $url->Host);
+		self::assertEquals('www.oktopost.com', $url->Host);
 	}
 	
 	public function test_get_ThrowExceptionOnInvalidURL_ExceptionThrown()
@@ -523,13 +523,13 @@ class URLTest extends TestCase
 	
 	public function test_hasScheme()
 	{
-		self::assertTrue(URL::hasScheme('http://www.unstable-cacao.com'));
-		self::assertFalse(URL::hasScheme('www.unstable-cacao.com'));
+		self::assertTrue(URL::hasScheme('http://www.oktopost.com'));
+		self::assertFalse(URL::hasScheme('www.oktopost.com'));
 	}
 	
 	public function test_hasHost()
 	{
-		self::assertTrue(URL::hasHost('http://www.unstable-cacao.com'));
+		self::assertTrue(URL::hasHost('http://www.oktopost.com'));
 		self::assertFalse(URL::hasHost('/hello/world'));
 	}
 	
@@ -553,23 +553,23 @@ class URLTest extends TestCase
 	
 	public function test_hasPath()
 	{
-		self::assertTrue(URL::hasPath('http://www.unstable-cacao.com/hello/world'));
-		self::assertFalse(URL::hasPath('http://www.unstable-cacao.com'));
+		self::assertTrue(URL::hasPath('http://www.oktopost.com/hello/world'));
+		self::assertFalse(URL::hasPath('http://www.oktopost.com'));
 	}
 	
 	public function test_hasQuery()
 	{
-		self::assertTrue(URL::hasQuery('http://www.unstable-cacao.com?a=1'));
+		self::assertTrue(URL::hasQuery('http://www.oktopost.com?a=1'));
 		
-		self::assertFalse(URL::hasQuery('http://www.unstable-cacao.com'));
-		self::assertFalse(URL::hasQuery('http://www.unstable-cacao.com?'));
+		self::assertFalse(URL::hasQuery('http://www.oktopost.com'));
+		self::assertFalse(URL::hasQuery('http://www.oktopost.com?'));
 	}
 	
 	public function test_hasFragment()
 	{
-		self::assertTrue(URL::hasFragment('http://www.unstable-cacao.com#yes'));
+		self::assertTrue(URL::hasFragment('http://www.oktopost.com#yes'));
 		
-		self::assertFalse(URL::hasFragment('http://www.unstable-cacao.com#'));
-		self::assertFalse(URL::hasFragment('http://www.unstable-cacao.com'));
+		self::assertFalse(URL::hasFragment('http://www.oktopost.com#'));
+		self::assertFalse(URL::hasFragment('http://www.oktopost.com'));
 	}
 }

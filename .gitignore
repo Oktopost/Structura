@@ -15,4 +15,4 @@
 
 # Build folders
 /build
-/Docs/_build
+composer.lock

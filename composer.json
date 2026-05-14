@@ -1,9 +1,9 @@
 {
-	"name": "unstable-cacao/structura",
+	"name": "oktopost/structura",
     "description": "",
 	"type": "library",
 	"license": "MIT",
-	"homepage": "https://github.com/unstable-cacao/Structura",
+	"homepage": "https://github.com/oktopost/Structura",
 	
 	"authors": [
 		{
