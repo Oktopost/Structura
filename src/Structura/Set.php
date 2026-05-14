@@ -273,7 +273,7 @@ class Set implements \IteratorAggregate, \ArrayAccess, \Countable, ICollection
 	 * <b>Traversable</b>
 	 * @since 5.0.0
 	 */
-	public function getIterator()
+	public function getIterator(): \Traversable
 	{
 		return new \ArrayIterator($this->set);
 	}
@@ -290,7 +290,7 @@ class Set implements \IteratorAggregate, \ArrayAccess, \Countable, ICollection
 	 * The return value will be casted to boolean if non-boolean was returned.
 	 * @since 5.0.0
 	 */
-	public function offsetExists($offset)
+	public function offsetExists($offset): bool
 	{
 		return key_exists($offset, $this->set);
 	}
@@ -304,7 +304,7 @@ class Set implements \IteratorAggregate, \ArrayAccess, \Countable, ICollection
 	 * @return mixed Can return all value types.
 	 * @since 5.0.0
 	 */
-	public function offsetGet($offset)
+	public function offsetGet($offset): mixed
 	{
 		return $this->offsetExists($offset);
 	}
@@ -321,7 +321,7 @@ class Set implements \IteratorAggregate, \ArrayAccess, \Countable, ICollection
 	 * @return void
 	 * @since 5.0.0
 	 */
-	public function offsetSet($offset, $value)
+	public function offsetSet($offset, $value): void
 	{
 		if ($value)
 		{
@@ -342,7 +342,7 @@ class Set implements \IteratorAggregate, \ArrayAccess, \Countable, ICollection
 	 * @return void
 	 * @since 5.0.0
 	 */
-	public function offsetUnset($offset)
+	public function offsetUnset($offset): void
 	{
 		unset($this->set[$this->getKey($offset)]);
 	}

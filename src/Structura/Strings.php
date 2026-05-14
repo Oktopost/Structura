@@ -23,7 +23,7 @@ class Strings
 		return substr($source, -(strlen($end))) == $end;
 	}
 	
-	public static function replace(string $subject, string $needle, string $with, int $limit = null): string 
+	public static function replace(string $subject, string $needle, string $with, ?int $limit = null): string
 	{
 		if (is_null($limit))
 			return str_replace($needle, $with, $subject);
