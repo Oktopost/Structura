@@ -22,8 +22,10 @@ class TraversalTest extends TestCase
 	}
 	
 	
-	public function test_execute_EmptySet_NoExcpetions(): void
+	public function test_execute_EmptySet_NoExceptions(): void
 	{
+		$this->expectNotToPerformAssertions();
+		
 		$s = new Traversal();
 		$s->execute();
 	}

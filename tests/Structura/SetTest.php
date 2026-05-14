@@ -481,7 +481,7 @@ class SetTest extends TestCase
 		$set = new Set();
 		$object = new class implements \IteratorAggregate
 		{
-			public function getIterator()
+			public function getIterator(): \Traversable
 			{
 				return new \ArrayIterator([1, 2, 3]);
 			}
@@ -565,7 +565,7 @@ class SetTest extends TestCase
 		$set = new Set();
 		$object = new class implements \IteratorAggregate
 		{
-			public function getIterator()
+			public function getIterator(): \Traversable
 			{
 				return new \ArrayIterator([1, 2, 3]);
 			}
