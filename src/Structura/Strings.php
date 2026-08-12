@@ -7,6 +7,7 @@ use Structura\Exceptions\StructuraException;
 
 class Strings
 {
+	/** @deprecated Use str_starts_with instead */
 	public static function isStartsWith(string $source, string $start): bool 
 	{
 		if (!$start)
@@ -15,6 +16,7 @@ class Strings
 		return substr($source, 0, strlen($start)) == $start;
 	}
 	
+	/** @deprecated Use str_ends_with instead */
 	public static function isEndsWith(string $source, string $end): bool
 	{
 		if (!$end)
@@ -100,6 +102,7 @@ class Strings
 			return substr($source, 0, strlen($source) - strlen($end));
 	}
 	
+	/** @deprecated Use str_contains instead */
 	public static function contains(string $haystack, string $needle): bool 
 	{
 		if (!$needle)
